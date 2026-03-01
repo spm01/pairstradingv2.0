@@ -61,32 +61,63 @@ For demonstration, in my results section, I attached the p-value < 0.05 AND p-va
 ---
 ## Results
 
-### 2024
-2024 was neither a success or a failure for either strategy.  Both ended the year around **+2–3% total PnL**.
+### 2024  
+### P < 0.05  
+2024 was neither a success or a failure for either strategy because no trades were executed. In some light we could regard this as a failure because no profit was generated, BUT it also indicates that the cointegration test is working as intended by NOT TRADING when the pair is moving a non-integrated fashion.  
 
-### 2025
-A completely different story. The deviation strategy finished at approximately **+12% total return**. The Bollinger approach failed to capture the relationship and returned roughly **-2% PnL**. Notably, the deviation strategy outperformed *despite* starting later in the year due to its burn-in requirement.
+Both strategies ended the year at precisely **0% total PnL**.  
+
+### P < 0.1
+This version of the cointegration test proved to be only marginally more successful than P < 0.05 because only one trade was executed in both strategies which generated small but meaningful PnL.  
+
+A looser p-value does indeed perform as expected with additional trades being made (even if the total trades go from 0 trades to 1 trade).  
+Crucially, the cointegration prevented the massive drawdown in June of 2024.
+
+**Total PnL: 2.66%**  
+
+### 2025  
+### P < 0.05  
+2025 proved to be a different scenario where more trades were executed starting in mid-July.  
+
+Interestingly, the Deviation strategy again generated higher returns than the typical Bollinger band strategy.  
+This lends itself to proving the Devation strategy as being a viable path for meaningful PnL.  
+
+Both strategies encountered similar difficulties in August-September but the Deviation strategy recovered and delivered positive returns while the Bollinger strategy failed to recoup any losses.  
+
+**Total PnL:  
+Deviation: 3.73%
+Bollinger: -1.54%**  
+
+### P < 0.1  
+The major difference between P < 0.05 and P < 0.1 is a LARGER gap between the Deviation strategy and the Bollinger strategy.  
+
+In mid-July, the Deviation strategy gained an additional ~0.5% PnL. This tracks with our expectation of P < 0.1 which allows our strategies to trade with lower confidence in cointegration leading to more/longer trades.  
+
+Both strategies again encountered the same drawdown in mid-August but the Deviation strategy was again able to recoup losses while the Bollinger bands approach failed to deliver any meaningful gains.  
+
+**Total PnL:  
+Deviation: 4.64%  
+Bollinger: -1.54%**  
 
 ---
 ---
 
 ## Known Constraints
 
-**Fixed start/end windows**: Both out-of-sample tests don't begin trading until approximately June of each respective year, cutting the opportunity set roughly in half. Despite this limitation, the deviation strategy still outperformed the Bollinger approach in 2025.
+**Fixed start/end windows**: Both out-of-sample tests don't begin trading until approximately June of each respective year, cutting the opportunity set roughly in half. Despite this limitation, the deviation strategy still outperformed the Bollinger approach in 2025. Still working on a fix for this issue. 
 
 ---
 
-## Roadmap — PairsTradeV2
+## Roadmap — PairsTradeV2.1
 
 The next iteration will aim to address both constraints above:
 - Rolling or expanding window approach to eliminate the hard start-date limitation (I'm not exactly sure how to integrate this).
-- Pre-trade cointegration testing to filter out periods where the pair relationship has broken down
 
 ---
 
 ## Notes
 
-This is a first pass. The goal was to validate whether a second-order volatility signal could add value over a baseline Bollinger approach, and in 2025 at least, the answer was yes.
+This is a second pass. It appears in both v1.0 and v2.0 that the second order volatility signal garners more value over the baseline Bollinger approach. :-)
 
 
 
