@@ -22,7 +22,7 @@ This project compares two mean reversion strategies across 2024 and 2025 out-of-
 |---|---|
 | `oos_pairstrade_202X_coint.py` | Out-of-sample test scripts with updated cointegration testing for 2024 and 2025 |
 | `202X OOS COINT PXXX.png` | These are the graphs that I use to visualize the total PnL for each OOS test (labeled by year and p-value) |
-All other files remain unchanges from my prior pairstradingv1.0 repository.
+All other files remain unchanged from my prior pairstradingv1.0 repository.
 
 ---
 
