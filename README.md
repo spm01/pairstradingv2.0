@@ -65,7 +65,9 @@ For demonstration, in my results section, I attached the p-value < 0.05 AND p-va
 ### P < 0.05  
 2024 was neither a success or a failure for either strategy because no trades were executed. In some light we could regard this as a failure because no profit was generated, BUT it also indicates that the cointegration test is working as intended by NOT TRADING when the pair is moving a non-integrated fashion.  
 
-Both strategies ended the year at precisely **0% total PnL**.  
+**Total PnL:  
+Deviation: 0%      
+Bollinger: 0%**  
 
 ### P < 0.1
 This version of the cointegration test proved to be only marginally more successful than P < 0.05 because only one trade was executed in both strategies which generated small but meaningful PnL.  
@@ -73,7 +75,9 @@ This version of the cointegration test proved to be only marginally more success
 A looser p-value does indeed perform as expected with additional trades being made (even if the total trades go from 0 trades to 1 trade).  
 Crucially, the cointegration prevented the massive drawdown in June of 2024.
 
-**Total PnL: 2.66%**  
+**Total PnL:  
+Deviation: 2.66%    
+Bollinger: 2.66%**  
 
 ### 2025  
 ### P < 0.05  
@@ -85,7 +89,7 @@ This lends itself to proving the Devation strategy as being a viable path for me
 Both strategies encountered similar difficulties in August-September but the Deviation strategy recovered and delivered positive returns while the Bollinger strategy failed to recoup any losses.  
 
 **Total PnL:  
-Deviation: 3.73%
+Deviation: 3.73%  
 Bollinger: -1.54%**  
 
 ### P < 0.1  
