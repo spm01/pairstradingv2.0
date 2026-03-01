@@ -39,7 +39,7 @@ Standard Bollinger Band implementation. Signals a trade when the spread relation
 ---
 ## Cointegration Testing
 In brief, cointegration tests for a relationship between two or more time series variables (even if the individual time series are non-stationary! [that means that the statistical properties like mean/variance/std deviation don't change over time])  
-As such, the cointegration tests for moving together over time and being binded by a stable equilibrium.  
+As such, the cointegration test evaluates the existence of a relationship moving together over time and being bound by a stable equilibrium.  
 
 Why is that important for this exercise?  
 The reason lies within the volatile nature between stocks. It's important that trades are executed within the framework of mean reversion, meaning that asset prices (and price ratio) will revert back to a specific, stable, long-term relationship.  
@@ -63,7 +63,7 @@ For demonstration, in my results section, I attached the p-value < 0.05 AND p-va
 
 ### 2024  
 ### P < 0.05  
-2024 was neither a success or a failure for either strategy because no trades were executed. In some light we could regard this as a failure because no profit was generated, BUT it also indicates that the cointegration test is working as intended by NOT TRADING when the pair is moving a non-integrated fashion.  
+2024 was neither a success or a failure for either strategy because no trades were executed. On one hand, we could regard this as a failure because no profit was generated, BUT it also indicates that the cointegration test is working as intended by NOT TRADING when the pair is moving a non-integrated fashion.  
 
 **Total PnL:  
 Deviation: 0%      
