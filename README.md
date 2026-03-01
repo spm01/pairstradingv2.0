@@ -41,13 +41,24 @@ Standard Bollinger Band implementation. Signals a trade when the spread relation
 In brief, cointegration tests for a relationship between two or more time series variables (even if the individual time series are non-stationary! [that means that the statistical properties like mean/variance/std deviation don't change over time])  
 As such, the cointegration tests for moving together over time and being binded by a stable equilibrium.  
 
-Why is that important for this exercise? The reason lies within the volatile nature between stocks. It's important that trades are executed within the framework of mean reversion, meaning that asset prices (and price ratio) will revert back to a specific, stable, long-term relationship.  
+Why is that important for this exercise?  
+The reason lies within the volatile nature between stocks. It's important that trades are executed within the framework of mean reversion, meaning that asset prices (and price ratio) will revert back to a specific, stable, long-term relationship.  
 
+This statistical test relys a few key components.    
+
+First, we need to define a time frame that the strategy can use to evaluate whether or not cointegration is present. That is done in the 'window' portion of the 'add_rolling_cointegration' function.  
+
+Second, we need to define the p-value that ensures the cointegration relationship isn't random, but rather a pattern of continued trending in the same direction.  
+We can choose the p-value we want to set depending on a number of factors including:  
+How much confidence we have in our strategy  
+The likelihood of the pair relationship being blown out  
+How much risk we are willing to take (A higher p-value means higher risk [I chose 0.05 b/c of standard economic practice]).  
+
+In theory, this also means we could artificially stimulate the trading strategy by lowering the p-value threshold which increases the likelihood of a trade and profit but also the likelihood of additional losses. 
+
+For demonstration, in my results section, I attached the p-value < 0.05 AND p-value < 0.1 to compare the difference in implementation. 
 
 ---
-
----
-
 ## Results
 
 ### 2024
