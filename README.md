@@ -52,7 +52,7 @@ Second, we need to define the p-value that ensures the cointegration relationshi
 We can choose the p-value we want to set depending on a number of factors including:  
 How much confidence we have in our strategy  
 The likelihood of the pair relationship being blown out  
-How much risk we are willing to take (A higher p-value means higher risk [I chose 0.05 b/c of standard economic practice]).  
+How much risk we are willing to take (A higher p-value means higher risk [I chose 0.05 in the upload b/c of standard economic practice]).  
 
 In theory, this also means we could artificially stimulate the trading strategy by lowering the p-value threshold which increases the likelihood of a trade and profit but also the likelihood of additional losses. 
 
