@@ -58,6 +58,23 @@ In theory, this also means we could artificially stimulate the trading strategy 
 
 For demonstration, in my results section, I attached the p-value < 0.05 AND p-value < 0.1 to compare the difference in implementation. 
 
+---  
+
+## A Note on Timing  
+Initially, I was skeptical for using ANY 2023 data on my strategy because of the risk of 'double dipping' (information from the future influences decisions in the past).  
+However, I realized that as long as my parameters remain unchanged for 2024/2025, then I don't encounter the double dip issue.  
+Fundamentally, my strategies need to know the current average based on the prior 52/90 days which by definition needs a burn-in window.  
+
+As long as I don't use future data to CHOOSE my parameters, then I'm safe.  
+
+Moreoever, I was comforted when reading literature that discusses this EXACT problem from Marcos Lopez de Prado and Ernie Chan. Both researchers acknowledge the importance of initializing my backtesting with historical data.
+
+Moving forward, if needed, I can remove training set observations that overlap with test set data.  
+
+###The justification:  
+To avoid an artificial blackout at the start of my OOS period, I used 2023 data to initialize the rolling state of the cointegration and Bollinger indicators. This ensure teh backtest reflects real-world Day 1 state of a live trading bot.  
+At no point did a decision in 2024 have access to data from that same year. Therefore, no future information was leaked into the trade execution. 
+
 ---
 ## Results
 
@@ -103,19 +120,41 @@ Both strategies again encountered the same drawdown in mid-August but the Deviat
 Deviation: 4.64%  
 Bollinger: -1.54%**  
 
----
+### COMPLETE  
+This is an updated section to include the complete performance over 2024/2025 while accounting for a ~6month burn-in period during 2023 before strategy implementation. 
+
+### P < 0.05
+Throughout the entire year 2024 and through most of 2025, neither strategy executed any trades. 
+This is another demonstration of cointegration being an effective tool to filter out potential trades but it does stymie additional profit generation.  
+
+In the second half of 2025, we start to see some trading activity with rapid spikes through August and September before leveling off.  
+Again, the Deviation strategy created higher returns than the traditional Bollinger band approach.  
+
+**Total PnL:  
+Deviation: 3.73%  
+Bollinger: -1.54%**  
+
+### P < 0.1  
+Again, neither strategy executed any trades during the first year, until November 2024 which delivered ~2.5% profit to both strategies. Following this initial trade, both strategies followed similar trade patterns as [P < 0.05].  
+
+The gains with [P < 0.1] seem to allow both strategies the necessary 'wiggle room' to trade enough to generate profit without being overly cautious.  
+The Deviation strategy again proved to be superior compared to the traditional Bollinger band approach. The Bollinger band approach was initially on track to negative PnL but was saved only by the initial trade in Nov2024. 
+
+**Total PnL:  
+Deviation: 7.30%  
+Bollinger: 1.12%**  
+
 ---
 
 ## Known Constraints
 
-**Fixed start/end windows**: Both out-of-sample tests don't begin trading until approximately June of each respective year, cutting the opportunity set roughly in half. Despite this limitation, the deviation strategy still outperformed the Bollinger approach in 2025. Still working on a fix for this issue. 
+**Grid Search v Coarse-to-Fine v Ornstein-Uhlenbeck Half-Life**: Reading more literature on this topic, I've realized that there are better ways to test for the ideal window period and k-value instead of the simple grid or coarse-to-fine search. 
 
 ---
 
 ## Roadmap — PairsTradeV2.1
 
-The next iteration will aim to address both constraints above:
-- Rolling or expanding window approach to eliminate the hard start-date limitation (I'm not exactly sure how to integrate this).
+The next iteration will aim to address the constraint.
 
 ---
 
