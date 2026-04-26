@@ -71,7 +71,7 @@ Moreoever, I was comforted when reading literature that discusses this EXACT pro
 Moving forward, if needed, I can remove training set observations that overlap with test set data.  
 
 ###The justification:  
-To avoid an artificial blackout at the start of my OOS period, I used 2023 data to initialize the rolling state of the cointegration and Bollinger indicators. This ensure teh backtest reflects real-world Day 1 state of a live trading bot.  
+To avoid an artificial blackout at the start of my OOS period, I used 2023 data to initialize the rolling state of the cointegration and Bollinger indicators. This ensure the backtest reflects real-world Day 1 state of a live trading bot.  
 At no point did a decision in 2024 have access to data from that same year. Therefore, no future information was leaked into the trade execution. 
 
 ---
