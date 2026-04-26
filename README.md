@@ -1,6 +1,5 @@
 # pairstradingv2.0
 Updated version of my pairs trading strategy that applies cointegration filter before executing trades.
-This is still a WIP for the application of how to overcome the timing issues (I don't want to double dip 2023 in-sample data with 2024/2025 out-of-sample data to compensate for the ~6month burn-in period).
 
 This is an extension of my prior work on a pairs trading implementation built around a simple mean reversion strategy, using **Coke (KO)** and **Pepsi (PEP)** as the test pair.  
 I remain invested in whether or not there exists a higher performing methodology between the 'devation' approach v. traditional bollinger bands approach. 
@@ -154,7 +153,7 @@ Bollinger: 1.12%**
 
 ## Roadmap — PairsTradeV2.1
 
-The next iteration will aim to address the constraint.
+The next iteration will aim to address the ideal window period constraint.
 
 ---
 
